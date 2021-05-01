@@ -1,0 +1,18 @@
+{
+    "id": "Survey",
+    "type": "object",
+    "properties": {
+        "username": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "instructions": { "type": "string" },
+        "questions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object"
+            }
+        }
+    },
+    "required": ["username", "title", "questions"]
+}

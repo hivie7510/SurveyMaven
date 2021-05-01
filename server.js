@@ -1,14 +1,22 @@
 const bodyParser = require('body-parser')
 const express = require('express')
+const Container = require('./config/container')
 const router = require('express').Router()
-const SingleAnswerController = require('./controllers/singleAnswerController')
+const definitions = require('./config/config')
+const SurveyController = require('./controllers/surveyController')
+const SurveyRepository = require('./repositories/surveyRepository')
 const app = express()
 const port = 3000
 
-router.post('/tf', new SingleAnswerController().build)
+router.post('/survey', new SurveyController().build)
+const container = new Container('surveyMaven', app)
+container.register('surveyRepository', SurveyRepository)
+
+//Container.create(definitions)
+
 app.use(bodyParser.json({ extended: true }))
 app.use(router)
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Listening at http://localhost:${port}`)
 })

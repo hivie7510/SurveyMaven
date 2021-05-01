@@ -1,23 +1,33 @@
 {
-  "name": "surveymaven",
-  "version": "1.0.0",
-  "description": "SurveyMaven is a online survey creator with composable question type (and a way for me to learn node)",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hivie7510/SurveyMaven.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hivie7510/SurveyMaven/issues"
-  },
-  "homepage": "https://github.com/hivie7510/SurveyMaven#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
-  }
+    "name": "surveymaven",
+    "version": "1.0.0",
+    "description": "SurveyMaven is a online survey creator with composable question type (and a way for me to learn node)",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon  ./server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hivie7510/SurveyMaven.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hivie7510/SurveyMaven/issues"
+    },
+    "homepage": "https://github.com/hivie7510/SurveyMaven#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cls-hooked": "^4.2.2",
+        "express": "^4.17.1",
+        "jsonschema": "^1.4.0",
+        "mongoose": "^5.12.7",
+        "sequelize": "^6.6.2",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7",
+        "sqlite3": "^5.0.2"
+    }
 }
