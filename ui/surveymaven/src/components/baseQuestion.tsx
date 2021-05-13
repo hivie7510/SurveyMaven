@@ -1,4 +1,4 @@
-import React from 'react'
+import { ChangeEvent } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
@@ -23,7 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default ({ children }) => {
+type BaseQuestionProps = {
+    onTitleChange: (title: string) => void
+}
+
+export default ({ onTitleChange }: BaseQuestionProps) => {
     const classes = useStyles()
     return (
         <article className={classes.root}>
@@ -38,15 +42,10 @@ export default ({ children }) => {
                     className={classes.input}
                     multiline
                     rowsMax='2'
+                    onChange={(ev: ChangeEvent<HTMLInputElement>): void =>
+                        onTitleChange(ev.target.value)
+                    }
                 ></TextField>
-                {/* <TextField
-                    label='Description/Instructions'
-                    variant='outlined'
-                    className={classes.input}
-                    multiline
-                    rowsMax='3'
-                ></TextField> */}
-                {children}
             </Grid>
         </article>
     )

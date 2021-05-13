@@ -1,12 +1,10 @@
 import IconButton from '@material-ui/core/IconButton'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
-import React, {
+import {
     useState,
-    FunctionComponent,
     KeyboardEvent,
     ClipboardEvent,
-    useEffect,
     useRef,
     ChangeEvent,
 } from 'react'
@@ -29,12 +27,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-type AppProps = {
+type IncrementalInputProps = {
     maxValue: number
     minValue: number
 }
 
-const InrementalInput = ({ maxValue = 99999, minValue = -9999 }: AppProps) => {
+const InrementalInput = ({
+    maxValue = 99999,
+    minValue = -9999,
+}: IncrementalInputProps) => {
     const [value, setValue] = useState<number>(0)
 
     const inputEl = useRef<HTMLInputElement>(null)
